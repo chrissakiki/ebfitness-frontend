@@ -1,0 +1,22 @@
+{
+    "banner_url" : "/assets/images/mission-2.webp",
+    "title" : "about Elie",
+    "image_url" : "/assets/images/about-elie.webp",
+    "image_url_2" : "/assets/images/about-elie-2.webp",
+    "main": {
+        "title_1": "Experience",
+        "title_2": "Mastery"
+    },
+    "experience": {
+        "description": "As a highly experienced exercise professional with a strong background in sports science, I bring a wealth of knowledge and a proven track record to the table. Over the course of 11 years, I have effectively translated complex concepts in math, physics, and physiology into practical exercise techniques. My primary objectives have always been to optimize muscle contraction, minimize the risk of injury, and enhance performance patterns"
+      },
+      "training_philosophy": {
+        "description": "Drawing from a wide range of experiences, including on-the-job learning, staying abreast of the latest research and studies, and collaborating closely with athletes from around the world, I have developed a comprehensive training philosophy. This philosophy revolves around five key principles: assess, respect, train, perform, and recover. By adhering to these principles, I strive to meet the diverse physical, physiological, and biomechanical needs of individuals, enabling them to live life to its fullest potential."
+      },
+      "global_experience": {
+        "description": "With a decade of professional experience spanning across different continents, I have successfully trained clients from various demographics. My expertise extends to seniors, beginners, competitive athletes, and even celebrities. Having worked in the Middle East, Europe, and Africa, I have gained invaluable insights into different fitness cultures and approaches. Additionally, I have obtained 24 fitness training certificates, complementing my undergraduate fitness degree. I am deeply committed to continuous learning, constantly expanding my knowledge and refining my skills."
+      },
+      "assurance": {
+        "description": "Rest assured, when you work with me, you can expect a highly skilled and dedicated professional who is passionate about helping you achieve your fitness goals. My extensive experience, comprehensive training philosophy, and commitment to ongoing growth make me well-equipped to guide you towards optimal physical performance and overall well-being."
+      }
+}

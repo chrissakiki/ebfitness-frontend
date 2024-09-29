@@ -1,0 +1,34 @@
+{
+    "banner_url": "/assets/images/hero.webp",
+    "title": "philosophy",
+    "image_url": "/assets/images/philo-1.webp",
+    "image_url_2": "/assets/images/philo-2.webp",
+    "main": {
+      "title_1": "Wellness Evolution"
+    },
+    "wellness_path": {
+      "description": "Find your path to well-being, energy, health, and movement with Elie Badawi. Our philosophy is centered around transforming lives through fitness, providing personalized programs that are not only effective but also fun to follow. We believe that exercise is of vital importance for maintaining and restoring good health, with just 20 minutes a day having a lasting effect on your energy resources."
+    },
+    "performance_support": {
+      "description": "Direct your focus on yourself – on your health and well-being. Elie Badawi is dedicated to supporting your performance through improvements in efficiency, adaptability, and resilience to injury. We understand the connection between movement and pain and ask, 'Are you moving poorly because you're in pain? Or are you in pain because you're moving poorly?' Our approach addresses these concerns, helping you optimize your movement patterns and alleviate discomfort."
+    },
+    "higher_standard_of_service": {
+      "description": "Your time and body are precious. With Elie Badawi, you can expect a higher standard of service. We will guide you with proven knowledge and a caring commitment to your lifelong well-being. Our goal is not just to change lives but to extend them, unlocking the potential for a healthier and more fulfilling existence."
+    },
+    "fitness_service": {
+      "description": "Experience our pioneering fitness service, which offers an ever-evolving tradition of transformational experiences. Through our Life Enhancement Service, we provide luxury fitness designed to promote weight loss, health, and wellness. We believe in shaping the future of health, step by step, helping you unfold your potential."
+    },
+    "program_benefits": {
+      "description": "Our programs encompass various benefits, including gaining physical endurance, shedding unwanted pounds, boosting metabolism, toning up, and detoxifying in an active, healthy, and sustainable way. We recognize that regular, appropriate exercise is essential for physical and mental balance, and we offer exercise options based on the five pillars of cardiovascular training, strength training, sensorimotor coordination, flexibility, and relaxation."
+    },
+    "future_of_health": {
+      "description": "Elie Badawi's expertise predicts advances in the future of health and wellness, including reversing aging and unlocking cognitive potential. Our programs aim to slow time, capture energy, and preserve youth, helping you unwind completely and regain your inner equilibrium."
+    },
+    "start_with_you_and_your_trainer": {
+      "description": "It all starts with you and your trainer. For over 11 years, Elie Badawi has been designing programs to support your unique goals, passions, and personality. Take advantage of our flexible training options that allow you to train anywhere, anytime, and in any way you prefer. Our holistic approach goes beyond redefining your workout; it transforms how you move, feel, and recharge."
+    },
+    "expert_trainer_commitment": {
+      "description": "With Elie Badawi, you can expect an expert trainer with over 150 hours of education who will work with you to create a custom plan based on your goals. We are committed to improving your strength, mobility, and flexibility through guidance, helping you tighten what's loose and loosen what's tight with touchless adjustments."
+    }
+  }
+  

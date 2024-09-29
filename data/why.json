@@ -1,0 +1,23 @@
+{
+    "banner_url": "/assets/images/about-elie-2.webp",
+    "title": "Why Elie",
+    "image_url": "/assets/images/why-elie.webp",
+    "image_url_2": "/assets/images/why-elie-2.webp",
+    "main": {
+      "title_1": "Precision",
+      "title_2": "Integration"
+    },
+    "training_methods": {
+        "description": "At Elie Badawi, our training methods are rooted in the latest research from the medical, biophysics, and sports science fields. We place a high priority on staying abreast of advancements in these areas to ensure that our clients receive the most up-to-date and effective training techniques. With our expertise in analyzing postures, general motor control, and sports-specific motions, we can optimize skeletal alignment and biomechanical efficiency."
+      },
+      "individualized_approach": {
+        "description": "We understand that the notion of achieving a 'result' varies for each individual, as everyone has distinct goals and circumstances. Therefore, we approach our training programs with meticulous attention to detail, employing intelligent processes and maintaining an unwavering commitment to improvement. Through continuous refinement of our methodologies, we strive for superior outcomes."
+      },
+      "collaboration": {
+        "description": "Collaboration is key at Elie Badawi. By working closely with each client, we develop personalized training programs that are tailored to their specific needs, taking into account their body's capabilities and tolerances. Our focus extends beyond the end goal; we also consider the type of stimulus that will be most beneficial to an individual at their current life stage."
+      },
+      "holistic_approach": {
+        "description": "To ensure a holistic approach, we provide comprehensive assessments that evaluate trainability, stress levels, sleep quality, and gut health. This allows us to precisely determine the best approach for you, prioritizing your well-being. Contact us today to experience a training program that is built around your goals and designed to optimize your overall health and fitness."
+    }
+  }
+  

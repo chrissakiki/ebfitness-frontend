@@ -1,0 +1,109 @@
+[
+    {
+        "pricing": "$600",
+        "image_url": "/assets/images/resistance-training.webp",
+        "name": "RESISTANCE TRAINING",
+        "category": "resistance_training",
+        "duration": "12 working sessions",
+        "time": "60 minutes",
+        "list": [
+          "Biomechanical Assessment",
+          "Yearly Planification",
+          "Individualized Program",
+          "Diet & Nutrition Guidance"
+        ],
+        "description": "Our personalized 1-on-1 sessions are specifically tailored to help you transform your physique, whether your goal is to gain muscle, lose fat, or build strength.",
+        "more_description": "At Elie Badawi, we understand that the quality of every workout lies in the execution of each repetition. That's why we prioritize maximizing the benefits and ensuring the safety of every rep for every muscle. Our approach involves customizing exercises to suit various body types and goals, tailoring our methods to meet your individual needs. With our expertise in biomechanics and precise execution, we stand out as experts who can enhance the effectiveness of your programs and optimize the efficiency of your program design. When it comes to maximizing muscle contraction with accuracy and application, nobody does it better than us. Contact us today to discover how we can assist you."
+        
+    },
+      {
+        "pricing": "$660",
+        "image_url": "/assets/images/functional-training.webp",
+        "name": "Functional Training",
+        "category": "functional_training",
+        "duration": "12 working sessions",
+        "time": "60 minutes",
+        "list": [
+          "Movement Screening",
+          "Biomechanical Assessment",
+          "Yearly Planification",
+          "Customized Program",
+          "Pre/post Phases Tests"
+        ],
+        "description": "Experience the benefits of our 1-on-1 sessions, which are designed to enhance your functional strength for everyday activities or competitive sports, depending on your specific training goals. Choose between in-person or online sessions.",
+        "more_description": "Our approach to fitness at Elie Badawi integrates essential principles of human biomechanics with customized, data-driven training programs. By aligning with these principles, our clients can anticipate achieving an enhanced state of bodily function and experiencing transformative body recomposition responses. Our outcomes encompass elevated athletic performance, alleviated chronic dysfunction, increased muscle mass, and cultivated safe and efficient bodily movement. Unlock your full potential by reaching out to us today to discover more about how we can help you."
+
+      },
+    {
+      "pricing": "$500",
+      "image_url": "/assets/images/movement-therapy.webp",
+      "name": "Movement Therapy",
+      "category": "movement_therapy",
+      "duration": "5 working sessions",
+      "time": "90 minutes",
+      "list": [
+        "Pain Clearance Tests",
+        "Biomechanical Assessment",
+        "Assisted Myofascial Release",
+        "Restorative Exercises" 
+      ],
+      "description": "Our comprehensive approach combines posture adjustment, pain management, and injury recovery to alleviate chronic discomfort. Through corrective exercises and specialized techniques, we help you reduce pain and improve overall well-being.",
+      "more_description": "With our science-led methodology, we have consistently helped countless clients achieve remarkable health transformations and improve their overall well-being with quantifiable outcomes. Our proven track record speaks for itself. At Elie Badawi, we believe in the mantra of 'Move well, move often.' Contact us today to discover how we can help you achieve similar results!"
+
+    }
+    ,
+    {
+      "pricing": "$250",
+      "image_url": "/assets/images/indiv-training.webp",
+      "name": "INDIVIDUALIZED TRAINING PROGRAM",
+      "shortcut_name": "INDIVIDUALIZED TRAINING",
+      "category": "individualized_training",
+      "duration": "1 working session",
+      "time": "6 weeks",
+      "list": [
+        "Biomechanical Assessment",
+        "Yearly Planification",
+        "Individualized Program",
+        "Diet & Nutrition Guidance"
+      ],
+      "description": "Embark on a fitness journey with our customized training program, meticulously designed to align with your unique fitness goals.",
+      "more_description": "Experience optimum results in minimum time with our meticulously crafted, customized training programs at Elie Badawi. Our team of experienced trainers is dedicated to collaborating closely with you to develop a unique personalized plan that aligns with your specific needs and goals. Whether you prefer in-person or online training, we provide the necessary tools and expertise to ensure your success. Don't hesitate to contact us today to learn more."
+
+    }
+    ,
+    {
+      "pricing": "30% OFF",
+      "image_url": "/assets/images/train-with-member.webp",
+      "name": "train with a team member",
+      "shortcut_name": "With a member",  
+      "category": "train_with_member",
+      "duration": "",
+      "time": "",
+      "list": [
+        "Movement training",
+        "2 on 1 personal training",
+        "Resistance training",
+        "Functional training"
+      ],
+      "description": "Train with our dedicated team members who are committed to guiding you towards reaching your goals. Benefit from specialized sessions led by Elie Badawi's expert team.",
+      "more_description": "Looking for exceptional training at a discounted price? Train with Elie Badawi Team Members, who are intensively supervised and trained by Elie Badawi himself. Our team consists of certified fitness professionals who follow his training methods and programs. With over 11 years of international experience as an exercise professional, Elie Badawi brings a wealth of knowledge and expertise to his team. He personally supervises all the cases referred to his team, ensuring that you receive the highest level of training and guidance."
+    }
+    ,
+    {
+      "pricing": "$840",
+      "image_url": "/assets/images/2-on-1.webp",
+      "name": "2 on 1 PERSONAL TRAINING",
+      "shortcut_name": "2 on 1 training",  
+      "category": "2on1_training",
+      "duration": "12 working sessions",
+      "time": "60 minutes",
+      "list": [
+        "Biomechanical Assessment",
+        "Yearly Planification",
+        "Individualized Program",
+        "Diet & Nutrition Guidance"
+      ],
+      "description": "Achieve your training goals through our 1-on-2 sessions, available in-person or online. With the support of a trainer, experience a dynamic and effective workout tailored to your needs.",
+      "more_description": "Our well-established BODY RECOMPOSITION methodology, combined with our commitment to achieving 'maximum results in minimum time,' has been instrumental in facilitating life-changing body transformations for hundreds of clients worldwide. As leading experts in delivering fast and effective outcomes, we are dedicated to helping you reach your goals. Contact us today to learn more."
+    }
+  ]

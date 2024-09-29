@@ -1,0 +1,38 @@
+[
+    {
+        "title": "Home",
+        "path": "/"
+    },
+    {
+        "title": "About",
+        "path": "/about"
+    },
+    {
+        "title": "Why",
+        "path": "/why"
+    },
+    {
+        "title": "Services",
+        "path": "/services?category=resistance_training"
+    },
+    {
+        "title": "Mission And Vision",
+        "path": "/mission-and-vision"
+    },
+    {
+        "title": "Philosophy",
+        "path": "/philosophy"
+    },
+    {
+        "title": "Terms And Conditions",
+        "path": "/terms-and-conditions",
+        "isFooter": true
+    },
+    {
+        "title": "Privacy Policy",
+        "path": "/privacy-policy",
+        "isFooter": true
+
+    }
+
+]

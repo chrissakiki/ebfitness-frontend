@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root{
+--primary-color: #0275d8;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0a0a0a;
+}
+
+.font-oswald{
+  font-family: 'Oswald', sans-serif;
+}
+
+/* .stroke-text {
+    color: transparent;
+    font-family: Arial, Helvetica;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--primary-color);
+  } */
+
+  .underline-effect{
+    /* background: linear-gradient(#0275d8, #0275d8); */
+    background-repeat: no-repeat;
+    background-size: 0 100%;
+    transition: background-size 1s ease-in;
+  }
+  .underline-effect-active {
+    background-size: 100% 100%;
+  }
+
+  .clip_img_container{
+    /* clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); */
+
+  }
+
+  .clip_img{
+    opacity: 0.3;
+    scale: 1.2
+  }
+
+
+  .button{
+    width: 200px;
+    height: 80px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .button::before {
+    content: '';
+    background-image: conic-gradient(#0275d8 20deg, transparent 120deg);
+    width: 150%;
+    height: 150%;
+    position: absolute;
+    animation: rotateBtn 2s linear infinite
+  }
+
+  .button::after {
+    content: 'Learn More';
+    width: 190px;
+    height:69px;
+    background-color: #101010;
+    position: absolute;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0275d8;
+    font-size: larger;
+    letter-spacing: 5px;
+    box-shadow: inset 20px 20px 20px #0000008c;
+  }
+
+  @keyframes rotateBtn {
+    0%{
+      transform: rotate(0deg);
+    }
+    100%{
+      transform: rotate(-360deg);
+    }
+  }
+
+
+  .swiper-pagination{
+    bottom: -5px !important;
+  }
+
+  .swiper-pagination-bullet{
+    background: #b9b9b9 !important;
+  }

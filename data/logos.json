@@ -1,0 +1,38 @@
+[
+    {
+        "title": "CFSC",
+        "image_url": "/assets/images/logo/CFSC.png"
+    },
+    {
+        "title": "EXOS",
+        "image_url": "/assets/images/logo/EXOS.png"
+    },
+    {
+        "title": "COMUE",
+        "image_url": "/assets/images/logo/COMUE.png"
+    },
+    {
+        "title": "FLB",
+        "image_url": "/assets/images/logo/FLB.png"
+    },
+    {
+        "title": "FMS",
+        "image_url": "/assets/images/logo/FMS.png"
+    },
+    {
+        "title": "RC",
+        "image_url": "/assets/images/logo/RC.png"
+    },
+    {
+        "title": "POLIQUIN",
+        "image_url": "/assets/images/logo/POLIQUIN.png"
+    },
+    {
+        "title": "UA",
+        "image_url": "/assets/images/logo/UA2.png"
+    },
+    {
+        "title": "HARVARD",
+        "image_url": "/assets/images/logo/HARVARD2.png"
+    }
+]
