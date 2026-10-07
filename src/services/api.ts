@@ -2,9 +2,7 @@ import axios from 'axios';
 import { handleErrorResponse } from '../lib/utils';
 
 const api = axios.create({
-  // baseURL: import.meta.env.VITE_API_URL,
-  // baseURL: 'http://localhost:8000/api',
-  baseURL: 'https://www.ebfitness.co/api',
+  baseURL: import.meta.env.VITE_API_BASE_URL,
 });
 
 type GET = {
