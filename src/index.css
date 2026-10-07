@@ -5,8 +5,8 @@
 @tailwind components;
 @tailwind utilities;
 
-#root{
---primary-color: #0275d8;
+#root {
+  --primary-color: #0275d8;
 }
 
 body {
@@ -14,7 +14,7 @@ body {
   background-color: #0a0a0a;
 }
 
-.font-oswald{
+.font-oswald {
   font-family: 'Oswald', sans-serif;
 }
 
@@ -25,77 +25,138 @@ body {
     -webkit-text-stroke-color: var(--primary-color);
   } */
 
-  .underline-effect{
-    /* background: linear-gradient(#0275d8, #0275d8); */
-    background-repeat: no-repeat;
-    background-size: 0 100%;
-    transition: background-size 1s ease-in;
+.underline-effect {
+  /* background: linear-gradient(#0275d8, #0275d8); */
+  background-repeat: no-repeat;
+  background-size: 0 100%;
+  transition: background-size 1s ease-in;
+}
+.underline-effect-active {
+  background-size: 100% 100%;
+}
+
+.clip_img_container {
+  /* clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); */
+}
+
+.clip_img {
+  opacity: 0.3;
+  scale: 1.2;
+}
+
+.button {
+  width: 200px;
+  height: 80px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button::before {
+  content: '';
+  background-image: conic-gradient(#0275d8 20deg, transparent 120deg);
+  width: 150%;
+  height: 150%;
+  position: absolute;
+  animation: rotateBtn 2s linear infinite;
+}
+
+.button::after {
+  content: 'Learn More';
+  width: 190px;
+  height: 69px;
+  background-color: #101010;
+  position: absolute;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0275d8;
+  font-size: larger;
+  letter-spacing: 5px;
+  box-shadow: inset 20px 20px 20px #0000008c;
+}
+
+@keyframes rotateBtn {
+  0% {
+    transform: rotate(0deg);
   }
-  .underline-effect-active {
-    background-size: 100% 100%;
+  100% {
+    transform: rotate(-360deg);
   }
+}
 
-  .clip_img_container{
-    /* clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); */
+.swiper-pagination {
+  bottom: -5px !important;
+}
 
-  }
+.swiper-pagination-bullet {
+  background: #b9b9b9 !important;
+}
 
-  .clip_img{
-    opacity: 0.3;
-    scale: 1.2
-  }
+.section h3,
+.section h4,
+.section h5 {
+  @apply font-bold 
+}
 
+.section p + ol {
+  margin-top: 0.5rem;
+}
 
-  .button{
-    width: 200px;
-    height: 80px;
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.section li {
+  @apply relative pl-[1.5rem] mb-[0.4rem] text-[0.9rem] md:text-[0.95rem]
+}
 
-  .button::before {
-    content: '';
-    background-image: conic-gradient(#0275d8 20deg, transparent 120deg);
-    width: 150%;
-    height: 150%;
-    position: absolute;
-    animation: rotateBtn 2s linear infinite
-  }
+.section li::before {
+  content: '●'; 
+  color: var(--primary-color, #3498db);
+  font-size: 1rem;
+  position: absolute;
+  left: 0; 
+  top: 50%;
+  transform: translateY(-50%); 
+  
+}
 
-  .button::after {
-    content: 'Learn More';
-    width: 190px;
-    height:69px;
-    background-color: #101010;
-    position: absolute;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #0275d8;
-    font-size: larger;
-    letter-spacing: 5px;
-    box-shadow: inset 20px 20px 20px #0000008c;
-  }
+strong {
+  @apply font-bold
+}
 
-  @keyframes rotateBtn {
-    0%{
-      transform: rotate(0deg);
-    }
-    100%{
-      transform: rotate(-360deg);
-    }
-  }
+.ql-align-center {
+  @apply text-left md:text-center;
+}
 
+/* Header Styles */
+.ql-editor h1 {
+  font-size: 36px; /* Custom font size for h1 */
+}
 
-  .swiper-pagination{
-    bottom: -5px !important;
-  }
+.ql-editor h2 {
+  font-size: 30px; /* Custom font size for h2 */
+}
 
-  .swiper-pagination-bullet{
-    background: #b9b9b9 !important;
-  }
+.ql-editor h3 {
+  font-size: 24px; /* Custom font size for h3 */
+}
+
+.ql-editor p {
+  font-size: 16px; /* Default text size for paragraphs */
+}
+
+.ql-size-large {
+  @apply block text-[1.5rem] md:text-[1.875rem] xl:text-[1.9rem] mb-2 md:mb-4;
+}
+
+.ql-size-small {
+  @apply text-[0.93rem] md:text-[1rem] leading-relaxed
+}
+
+br{
+  content: '';
+  display: block;
+  margin: 16px 0;
+}

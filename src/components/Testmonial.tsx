@@ -1,7 +1,6 @@
 import Container from './UI/Container';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import TestimonialData from '../../data/testimonial.json';
-import { AiFillStar } from 'react-icons/ai';
+import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { BsChatRightQuote } from 'react-icons/bs';
 import UnderlineTitle from './UI/UnderlineTitle';
 import { Pagination } from 'swiper/modules';
@@ -18,7 +17,7 @@ const breakpoints = {
   },
 };
 
-const Testmonial = () => {
+const Testmonial = ({ data }: { data: Testimonial[] }) => {
   return (
     <div
       className='py-10 md:py-16 relative w-full bg-cover bg-no-repeat bg-center shadow-2xl text-white'
@@ -50,7 +49,7 @@ const Testmonial = () => {
                 pagination={{ clickable: true }}
                 className='p-2 md:p-4 pb-12 md:pb-14'
               >
-                {TestimonialData?.map((item, idx) => {
+                {data?.map((item, idx) => {
                   return (
                     <SwiperSlide key={idx} className='2xl:h-[17.5rem]'>
                       <div className='h-full bg-secondary-color/60 flex flex-col justify-between gap-3 xl:gap-5 items-center p-5 rounded-lg'>
@@ -64,10 +63,15 @@ const Testmonial = () => {
                         <div className='flex flex-col items-center gap-2'>
                           <div className='flex items-center gap-1 text-primary-color'>
                             {Array.from({ length: 5 }).map((_, idx) => {
-                              return <AiFillStar key={idx} size={20} />;
+                              return idx < (item?.rating || 0) ? (
+                                <AiFillStar key={idx} size={20} />
+                              ) : (
+                                <AiOutlineStar key={idx} size={20} />
+                              );
                             })}
+                      
                           </div>
-                          <p className='font-bold'>{item?.name}</p>
+                          <p className='font-bold'>{item?.author_name}</p>
                         </div>
                       </div>
                     </SwiperSlide>

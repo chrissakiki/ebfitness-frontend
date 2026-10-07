@@ -18,7 +18,7 @@ const SocialMediaHeader = () => {
         </div>
         <div className='flex items-center gap-5 text-white'>
           <a
-            href='https://www.instagram.com/eliebadawi_ofc'
+            href='https://www.instagram.com/eb_fitnessteam'
             target='_blank'
             className='insta'
           >

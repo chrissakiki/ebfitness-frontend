@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useLayoutEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { cn } from '../../lib/utils';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -12,54 +12,54 @@ interface IProps extends Children {
 const UnderlineTitle = ({ children, color = 'primary', className }: IProps) => {
   const containerRef = useRef(null)
   const titleRef = useRef(null);
-  const underlineRef = useRef(null);
+  // const underlineRef = useRef(null);
 
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() =>{
-      const tl = gsap.timeline();
-      tl.fromTo(
-        titleRef.current,
-        {
-          opacity: 0,
-          duration: 1,
-        },
-        {
-          opacity: 1,
-          scrollTrigger: {
-            trigger: titleRef.current,
-            start: 'top 90%',
-            end: 'top 70%',
-            // markers: true,
-            scrub: 1.2,
-          },
-        }
-      ).to('.underline-effect', {
-        scrollTrigger: {
-          trigger: underlineRef.current,
-          start: 'top 90%',
-          end: 'top 10%',
-          // markers: true,
-          scrub: false,
-          toggleClass: 'underline-effect-active',
-        },
-      });
+  // useLayoutEffect(() => {
+  //   let ctx = gsap.context(() =>{
+  //     const tl = gsap.timeline();
+  //     tl.fromTo(
+  //       titleRef.current,
+  //       {
+  //         opacity: 0,
+  //         duration: 1,
+  //       },
+  //       {
+  //         opacity: 1,
+  //         scrollTrigger: {
+  //           trigger: titleRef.current,
+  //           start: 'top 90%',
+  //           end: 'top 70%',
+  //           // markers: true,
+  //           scrub: 1.2,
+  //         },
+  //       }
+  //     ).to('.underline-effect', {
+  //       scrollTrigger: {
+  //         trigger: underlineRef.current,
+  //         start: 'top 90%',
+  //         end: 'top 10%',
+  //         // markers: true,
+  //         scrub: false,
+  //         toggleClass: 'underline-effect-active',
+  //       },
+  //     });
   
-      // ScrollTrigger.create({
-      //   trigger: '.underline-effect',
-      //   animation: tl,
-      //   start: 'top 90%',
-      //   end: 'top 70%',
-      //   markers: true,
-      //   scrub: 1.2,
-      //   toggleClass: 'underline-effect-active'
-      // });
+  //     // ScrollTrigger.create({
+  //     //   trigger: '.underline-effect',
+  //     //   animation: tl,
+  //     //   start: 'top 90%',
+  //     //   end: 'top 70%',
+  //     //   markers: true,
+  //     //   scrub: 1.2,
+  //     //   toggleClass: 'underline-effect-active'
+  //     // });
   
-      // return () => tl.revert()
-    },containerRef)
+  //     // return () => tl.revert()
+  //   },containerRef)
 
-    return () => ctx.revert()
+  //   return () => ctx.revert()
 
-  }, []);
+  // }, []);
 
   return (
     <div ref={containerRef} className='flex flex-col items-center justify-center'>
@@ -74,7 +74,7 @@ const UnderlineTitle = ({ children, color = 'primary', className }: IProps) => {
         )}
       >
         {children}
-        <span
+        {/* <span
           ref={underlineRef}
           className={cn(
             'absolute inset-x-0 -bottom-2 h-[4px] underline-effect bg-gradient-to-r  rounded-xl',
@@ -83,7 +83,7 @@ const UnderlineTitle = ({ children, color = 'primary', className }: IProps) => {
               'from-[#fff] to-[#fff]': color === 'light',
             }
           )}
-        ></span>
+        ></span> */}
       </p>
     </div>
   );

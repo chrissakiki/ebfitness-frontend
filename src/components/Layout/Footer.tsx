@@ -12,24 +12,24 @@ import { IoCallSharp, IoLocationSharp } from 'react-icons/io5';
 const Footer = () => {
   const { pathname } = useLocation();
 
-  const handleQuote = <T extends string>(pathname: T): T => {
+  const handleQuote =(pathname: string) => {
     switch (pathname) {
       case '/':
-        return 'Results may vary. Results are based on individual circumstances. Time frames for results are not guaranteed. Willpower is always required!' as T
+        return 'Results may vary. Results are based on individual circumstances. Time frames for results are not guaranteed. Willpower is always required!'
       case '/why':
-        return 'Science Meets Practical Application.' as T;
+        return 'Science Meets Practical Application.';
       case '/mission-and-vision':
-        return 'This unique, original experience leaves each person stronger than ever' as T;
+        return 'This unique, original experience leaves each person stronger than ever';
       default:
-        return 'GO BEYOND TRANSFORMATION Get in the best shape of your life, for life.' as T;
+        return 'GO BEYOND TRANSFORMATION Get in the best shape of your life, for life.';
     }
   };
   return (
     <>
-      <div className='w-full pb-3 pt-10 md:py-12 bg-[#121212] px-4'>
+      <div className='w-full pb-3 pt-10 md:py-12 bg-[#121212]'>
         <Container>
           <div className='grid place-items-center gap-5 mb-16'>
-            <p className='text-[1.2rem] lg:text-[1.7rem] font-bold text-primary-color text-center uppercase tracking-[0.06rem]'>
+            <p className='text-[1.2rem]  font-bold text-primary-color md:text-center uppercase tracking-[0.06rem]'>
               {handleQuote(pathname)}
             </p>
           </div>
@@ -44,7 +44,7 @@ const Footer = () => {
 
             {/* Center  */}
             <div className='flex flex-col gap-2 text-white '>
-              <span className='font-semibold text-[1.4rem]'>Quick Links</span>
+              <span className='font-semibold text-[1.2rem]'>Quick Links</span>
               <div className='flex flex-col gap-1'>
                 {menuData?.map((item, idx) => {
                   return (
@@ -64,10 +64,10 @@ const Footer = () => {
             {/* Social Media  */}
 
             <div className='flex flex-col gap-2 text-white'>
-              <span className='font-semibold text-[1.4rem]'>FOLLOW US</span>
+              <span className='font-semibold text-[1.2rem]'>FOLLOW US</span>
               <div className='flex items-center gap-5'>
                 <a
-                  href='https://www.instagram.com/eliebadawi_ofc'
+                  href='https://www.instagram.com/eb_fitnessteam'
                   target='_blank'
                   className='insta'
                 >
@@ -96,7 +96,7 @@ const Footer = () => {
 
             <div className='flex flex-col gap-7 justify-between text-white'>
               <div className='text-white flex flex-col gap-2'>
-                <span className='font-semibold text-[1.4rem]'>CONTACT US</span>
+                <span className='font-semibold text-[1.2rem]'>CONTACT US</span>
                 <span className='flex gap-2'>
                   <span className='text-primary-color'>
                     <IoCallSharp size={20} />
@@ -111,7 +111,7 @@ const Footer = () => {
                 </span>
               </div>
               <div className='text-[1.1rem] font-medium'>
-                @2024 Elie Badawi | All Rights Reserved
+                @2024 EB Fitness Team | All Rights Reserved
               </div>
             </div>
           </div>

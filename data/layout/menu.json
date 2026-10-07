@@ -4,24 +4,24 @@
         "path": "/"
     },
     {
-        "title": "About",
+        "title": "About Us",
         "path": "/about"
     },
     {
-        "title": "Why",
-        "path": "/why"
+        "title": "Our Team",
+        "path": "/our-team"
     },
     {
         "title": "Services",
         "path": "/services?category=resistance_training"
     },
     {
-        "title": "Mission And Vision",
-        "path": "/mission-and-vision"
+        "title": "Education",
+        "path": "/education"
     },
     {
-        "title": "Philosophy",
-        "path": "/philosophy"
+        "title": "Blog",
+        "path": "/blog"
     },
     {
         "title": "Terms And Conditions",

@@ -39,7 +39,7 @@ const Header = () => {
       <Container>
         <div className='w-full flex justify-between items-center'>
           {/* Left  */}
-          <NavLink to={'/'}>
+          <NavLink to={'/'} className={'cursor-pointer'}>
             <img
               src='/assets/images/logo.webp'
               className='w-[6rem] aspect-[1.015]'

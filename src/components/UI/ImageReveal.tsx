@@ -1,6 +1,7 @@
 import gsap from 'gsap';
 import { useLayoutEffect, useRef } from 'react'
 import { cn } from '../../lib/utils';
+import Image from './Image';
 
 const ImageReveal = ({transformOrigin = 'right', className, src} : {transformOrigin?: string, className?: string, src?: string}) => {
 
@@ -44,7 +45,7 @@ const ImageReveal = ({transformOrigin = 'right', className, src} : {transformOri
     <div
       className='absolute bg-secondary-color inset-y-0 w-full overflow-hidden clip_img_container z-[1]'
     ></div>
-    <img
+    <Image
       src={src}
       className='w-full h-full object-cover rounded-lg box-border p-1 clip_img'
     />

@@ -1,12 +1,10 @@
-import  { useEffect, useState } from 'react';
-import ServicesData from '../../data/services.json';
+import { useEffect, useState } from 'react';
 import Container from './UI/Container';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import UnderlineTitle from './UI/UnderlineTitle';
 import { Pagination } from 'swiper/modules';
-import Education from './Education';
-import Modal from './UI/Modal';
-import ServicesViewer from './Services/ServicesViewer';
+import Image from './UI/Image';
+import { Link } from 'react-router-dom';
 
 const breakpoints = {
   300: {
@@ -23,32 +21,23 @@ const breakpoints = {
   },
 };
 
-const Services = () => {
-
+const Services = ({ data }: { data: Service[] }) => {
   const [currCategory, setCurrCategory] = useState('');
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    if (currCategory){
-      setIsOpen(true)
+    if (currCategory) {
+      setIsOpen(true);
     }
-  },[currCategory])
+  }, [currCategory]);
 
   useEffect(() => {
-    if (!isOpen){
-      setCurrCategory('')
+    if (!isOpen) {
+      setCurrCategory('');
     }
-  },[isOpen])
+  }, [isOpen]);
   return (
     <>
-    <div className='py-10 md:py-16 relative w-full text-white bg-cover bg-no-repeat bg-center'
-        style={{
-      backgroundImage: `linear-gradient(
-    rgba(0, 0, 0, 0.85),
-    rgba(0, 0, 0, 0.95)
-  ), url('/assets/images/why-elie-2.webp')`,
-    }}
-    >
       <div className='flex flex-col gap-8 md:gap-12'>
         <Container className='h-full flex flex-col gap-8'>
           <UnderlineTitle color='light'>Services</UnderlineTitle>
@@ -66,40 +55,39 @@ const Services = () => {
               pagination={{ clickable: true }}
               className='p-2 md:p-4 pb-12 md:pb-16'
             >
-              {ServicesData?.map((item, idx) => {
-                return (
-                  <SwiperSlide key={idx}>
-                    <div
-                      key={idx}
-                      className='h-[400px] lg:h-[500px] w-full relative cursor-pointer'
-                      onClick={() => setCurrCategory(item?.category) }
-                    >
-                      <img
-                        key={idx}
-                        src={item?.image_url}
-                        className='w-full h-full object-cover rounded-lg'
-                      />
-                      <div className='absolute inset-0 bg-primary-color/40 flex items-center justify-center p-3'>
-                        <p className='text-white text-[1.7rem] lg:text-[2.5rem] leading-snug font-bold font-oswald uppercase text-center'>
-                          {item?.shortcut_name ? item?.shortcut_name : item?.name}
-                        </p>
+              {data?.length > 0 &&
+                data?.map((item, idx) => {
+                  return (
+                    <SwiperSlide key={idx}>
+                      <div className='h-[400px] lg:h-[500px] w-full relative cursor-pointer'>
+                        <Link
+                          key={idx}
+                          to={`/services?category=${item?.category}`}
+                          className='h-full w-full'
+                          // onClick={() => setCurrCategory(item?.category)}
+                        >
+                          <Image
+                            src={item?.thumbnail_url}
+                            className='w-full h-full object-cover rounded-lg'
+                          />
+                        </Link>
+                        <div className='absolute inset-0 bg-primary-color/10 flex items-center justify-center p-2 pointer-events-none'>
+                          <p className='text-white w-full text-[2.6rem] lg:text-[3.8rem] break-words leading-snug font-semibold font-oswald uppercase text-center tracking-wider'>
+                            {item?.name}
+                          </p>
+                        </div>
                       </div>
-                      
-                    </div>
-                  </SwiperSlide>
-                );
-              })}
+                    </SwiperSlide>
+                  );
+                })}
             </Swiper>
           </Container>
         </div>
       </div>
 
-      <Education/>
-    </div>
-
-    <Modal isOpen={isOpen} >
-    <ServicesViewer cat={currCategory} close={() => setIsOpen(false)}/>
-  </Modal>
+      {/* <Modal isOpen={isOpen}>
+        <ServicesViewer cat={currCategory} close={() => setIsOpen(false)} />
+      </Modal> */}
     </>
   );
 };
