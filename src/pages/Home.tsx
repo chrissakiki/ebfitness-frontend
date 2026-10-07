@@ -3,84 +3,114 @@ import Hero from '../components/Hero';
 import Milsestone from '../components/Milsestone';
 import About from '../components/Info/About';
 import Marquee from 'react-fast-marquee';
-import Why from '../components/Why';
 import Testmonial from '../components/Testmonial';
 import ContactUs from '../components/ContactUs';
 import Packages from '../components/Packages';
 import Services from '../components/Services';
+import { useState } from 'react';
+import { GET } from '../services/api';
+import Education from '../components/Education';
+import LoadingWrapper from '../components/LoadingWrapper';
 // gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
-  // const RecIcon = (key: string) => {
-  //   return {
-  //     'training_sessions' : '',
-  //     'years_of_experience' : '',
-  //     'clients_worldwide' : <ImUsers size={22} />,
-  //     'international_certificates' : <AiFillSafetyCertificate size={25}/>,
-  //   }[key]
-  // }
+  const [data, setData] = useState<{
+    banner: Banner | null;
+    milestones: PaginatedResponse<Milestone> | null;
+    about: Section | null;
+    testimonials: PaginatedResponse<Testimonial> | null;
+    services: PaginatedResponse<Service> | null;
+    logos: PaginatedResponse<Achievement> | null;
+  } | null>(null);
 
-  // const containerRef = useRef<HTMLDivElement>(null);
+  const fetchData = async (signal: AbortSignal) => {
+    try {
+      const bannerFetch = GET<Banner>({ endpoint: '/banners/1', signal });
+      const milestonesFetch = GET<PaginatedResponse<Milestone>>({
+        endpoint: '/milestones',
+        signal,
+      });
 
-  // useLayoutEffect(() => {
-  //   let context = gsap.context(() => {
-  //     gsap.to('.box', {
-  //       // x: "+=200",
-  //       width: '100%',
-  //       height: '100%',
-  //       // duration: 10,
-  //       scrollTrigger: {
-  //         trigger: '.box',
-  //         start: 'top 100%', // Trigger point relative to the viewport
-  //         end: 'bottom 100%', // End point relative to the viewport
-  //         scrub: 1.3, // Smoothly animate during scroll
-  //         markers: true, // Add markers to visualize trigger and end points (for debugging)
-  //       },
-  //     });
-  //   },containerRef)
-  //   return () => context.revert()
-  // }, []);
+      const aboutFetch = GET<Section>({
+        endpoint: '/sections/type/about',
+        signal,
+      });
+
+      const testimonialsFetch = GET<PaginatedResponse<Testimonial>>({
+        endpoint: '/testimonials',
+        signal,
+      });
+      const servicesFetch = GET<PaginatedResponse<Service>>({
+        endpoint: '/services',
+        signal,
+      });
+      const logosFetch = GET<PaginatedResponse<Achievement>>({
+        endpoint: '/achievements?type=logos&limit=20',
+        signal,
+      });
+
+      const [banner, milestones, about, testimonials, services, logos] =
+        await Promise.all([
+          bannerFetch,
+          milestonesFetch,
+          aboutFetch,
+          testimonialsFetch,
+          servicesFetch,
+          logosFetch,
+        ]);
+
+      setData({
+        banner: banner?.data ?? null,
+        milestones: milestones.data ?? null,
+        about: about?.data ?? null,
+        testimonials: testimonials.data ?? null,
+        services: services.data ?? null,
+        logos: logos.data ?? null,
+      });
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
 
   return (
-    <div className=''>
-      <Hero />
-      <Milsestone />
-      {/* <div className='bg-primary-color opacity-25 w-full h-[1px]'/> */}
-      <About />
-      <Why />
-      <div className='py-5 grid place-items-center'>
-        <Marquee className='flex gap-10'>
-          <p className='text-[2rem] md:text-[4rem] font-bold text-primary-color/70 stroke-text uppercase font-oswald'>
-            Client Focused, Coach Led, Results Driven.
-          </p>
-          &nbsp; &nbsp; &nbsp;
-          <p className='text-[2rem] md:text-[4rem] font-bold text-primary-color/70 stroke-text uppercase font-oswald'>
-            Client Focused, Coach Led, Results Driven.
-          </p>
-        </Marquee>
-      </div>
-      <div className='bg-primary-color opacity-25 w-full h-[1px]' />
-      <Services />
-      {/* <Education/> */}
-      <div className='bg-primary-color opacity-25 w-full h-[1px]' />
-      <Testmonial />
-      <Packages />
-      <ContactUs />
-      {/* <div className='h-[calc(15vh)] grid place-items-center'>
-        <Marquee className='flex gap-10'>
-        <p className='text-[2rem] md:text-[4rem] font-bold text-[#f8f9f7]/90 stroke-text'>
-          Client Focused, <span className='text-primary-color'>Coach Led,</span> Results Driven.
-        </p>
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        <p className='text-[2rem] md:text-[4rem] font-bold text-[#f8f9f7]/90 stroke-text'>
-          Client Focused, <span className='text-primary-color'>Coach Led,</span> Results Driven.
-        </p>
-        </Marquee>
-
-      </div> */}
-    </div>
+    <LoadingWrapper fetchData={fetchData}>
+      <>
+        <Hero data={data?.banner ?? null} />
+        <Milsestone data={data?.milestones?.data ?? []} />
+        {/* <div className='bg-primary-color opacity-25 w-full h-[1px]'/> */}
+        <About data={data?.about ?? null} />
+        {/* <Why /> */}
+        <div className='py-5 grid place-items-center'>
+          <Marquee className='flex gap-10'>
+            <p className='text-[2rem] md:text-[4rem] font-bold text-primary-color/70 stroke-text uppercase font-oswald'>
+              Client Focused, Coach Led, Results Driven.
+            </p>
+            &nbsp; &nbsp; &nbsp;
+            <p className='text-[2rem] md:text-[4rem] font-bold text-primary-color/70 stroke-text uppercase font-oswald'>
+              Client Focused, Coach Led, Results Driven.
+            </p>
+          </Marquee>
+        </div>
+        <div className='bg-primary-color opacity-25 w-full h-[1px]' />
+        <div
+          className='py-10 md:py-16 relative w-full text-white bg-cover bg-no-repeat bg-center'
+          style={{
+            backgroundImage: `linear-gradient(
+    rgba(0, 0, 0, 0.85),
+    rgba(0, 0, 0, 0.95)
+  ), url('/assets/images/why-elie-2.webp')`,
+          }}
+        >
+          <Services data={data?.services?.data ?? []} />
+          <Education data={data?.logos?.data ?? []} />
+        </div>
+        {/* <Education/> */}
+        <div className='bg-primary-color opacity-25 w-full h-[1px]' />
+        <Testmonial data={data?.testimonials?.data ?? []} />
+        <Packages data={data?.services?.data ?? []} />
+        <ContactUs />
+      </>
+    </LoadingWrapper>
   );
 };
 

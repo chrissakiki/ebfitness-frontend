@@ -37,7 +37,7 @@ const Menu = () => {
             </span>
           </div>
 
-          <div className='flex flex-col items-center justify-center gap-6 mt-20'>
+          <div className='flex flex-col items-center justify-center gap-4 md:gap-5 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2'>
             {menuData?.map((item, idx) => {
               if (item?.isFooter) return;
               return (
@@ -46,7 +46,7 @@ const Menu = () => {
                   to={item?.path}
                   className={({ isActive }) =>
                     clsx(
-                      `text-[1.5rem] md:text-[2.5em] duration-500 ${
+                      `text-[1.8rem] md:text-[2rem] xl:text-[2.5rem] duration-500 ${
                         isActive
                           ? 'text-primary-color'
                           : 'text-[#f8f9f7] hover:text-primary-color'

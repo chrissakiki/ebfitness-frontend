@@ -1,6 +1,5 @@
 import Container from './UI/Container';
 import UnderlineTitle from './UI/UnderlineTitle';
-import PackagesData from '../../data/services.json';
 import { IoIosArrowForward } from 'react-icons/io';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
@@ -21,7 +20,7 @@ const breakpoints = {
   },
 };
 
-const Packages = () => {
+const Packages = ({data} : {data: Service[]}) => {
   return (
     <div className='py-10 md:py-16 relative w-full bg-secondary-color text-white'>
       <div className='flex flex-col gap-8 md:gap-12'>
@@ -43,41 +42,54 @@ const Packages = () => {
                 modules={[Pagination]}
                 pagination={{ clickable: true }}
               >
-                {PackagesData?.map((item, idx) => {
+                {data?.map((el, idx) => {
                   return (
                     <SwiperSlide key={idx}>
-                      <div className='group bg-[#121212] h-[31.25rem] shadow-[6px_6px_12px_#0275d880] py-5 px-7 flex flex-col gap-3'>
+                      <div className='group select-none bg-[#121212]  shadow-[6px_6px_12px_#0275d880] pt-5 pb-6 px-7 flex flex-col gap-1'>
                         <p className='text-[2.2rem] md:text-[2.7rem] text-primary-color font-bold'>
-                          {item?.pricing}
+                          {el?.pricing}
                         </p>
-                        <p className='font-semibold text-[1.2rem] capitalize'>
-                          {item?.duration ? item.duration : '--'}
+
+                        <p className='uppercase font-bold text-primary-color text-[1.05rem] md:text-[1.2rem] flex flex-wrap items-center gap-2'>
+                          {el?.name} <span className='text-[0.75rem] text-white'> {el?.sub_name}</span>
                         </p>
-                        <p className='uppercase font-bold text-primary-color text-[1.05rem] md:text-[1.2rem]'>
-                          {item?.name}
-                        </p>
-                        <ul className='flex flex-col gap-4 mt-2 text-[0.95rem] md:text-[1.05rem] text-[#b9b9b9] group-hover:text-white duration-300 select-none'>
-                          {item.time && (
+
+                        <ul className='h-[17.8rem] md:h-[22rem] lg:h-[17.8rem]  overflow-auto mt-4 flex flex-col gap-4 text-[0.95rem] md:text-[1.05rem] text-white group-hover:text-gray-200 duration-300 select-none'>
+                          
+                        {el.number_of_sessions && (
                             <li
-                              key={idx}
-                              className='border-b border-[#818181]/20 pb-2 flex items-center gap-3 capitalize'
+                              className='border-b border-[#81818115] pb-2 flex items-center gap-3 capitalize'
                             >
                               <IoIosArrowForward />
-                              {item?.time}
+                             {`${el.number_of_sessions} working sessions`}
                             </li>
                           )}
-                          {item?.list?.map((childItem, idx) => {
+                          
+                          {el.duration && (
+                            <li
+                              className='border-b border-[#81818115] pb-2 flex items-center gap-3 capitalize'
+                            >
+                              <IoIosArrowForward />
+                              {el?.duration}
+                            </li>
+                          )}
+                          {el?.items?.map((item, idx) => {
                             return (
                               <li
                                 key={idx}
-                                className=' border-b border-[#818181]/20 pb-2 flex items-center gap-3'
+                                className=' border-b border-[#81818115] pb-2 flex items-center gap-3'
                               >
                                 <IoIosArrowForward />
-                                {childItem}
+                                {item?.feature_description}
                               </li>
                             );
                           })}
                         </ul>
+
+                        {/* <p className='font-semibold text-[1.2rem] capitalize'>
+                          {el?.number_of_sessions ? `${el.number_of_sessions} working sessions` : '--'}
+                        </p> */}
+              
                       </div>
                     </SwiperSlide>
                   );

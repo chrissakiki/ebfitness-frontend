@@ -1,22 +1,18 @@
-import { Suspense, useState } from 'react';
 import Container from './UI/Container';
-import LogosData from '../../data/logos.json';
 import { SwiperSlide } from 'swiper/react';
 import AutoSwiper from './AutoSwiper';
 import FadeIn from './Animate/FadeIn';
-import CertificatesData from '../../data/certificates.json';
-import ImageCarousel from './Swiper/ImageCarousel';
-import Modal from './UI/Modal';
+import Image from './UI/Image';
 
 const breakpoints = {
   300: {
     slidesPerView: 3,
     spaceBetween: 30,
   },
-  500: {
-    slidesPerView: 3,
-    spaceBetween: 30,
-  },
+  // 500: {
+  //   slidesPerView: 3,
+  //   spaceBetween: 30,
+  // },
   768: {
     slidesPerView: 4,
     spaceBetween: 40,
@@ -27,24 +23,29 @@ const breakpoints = {
   },
 };
 
-const renderSlides = () => {
+const renderSlides = (logos: Achievement[]) => {
   const groupedItems = [];
-  for (let i = 0; i < LogosData.length; i += 2) {
+  for (let i = 0; i < logos.length; i += 2) {
     groupedItems.push(
-      <SwiperSlide key={i} className='flex flex-col lg:items-center gap-10'>
-        <img
+      <SwiperSlide
+        key={i}
+        className='flex flex-col lg:items-center justify-center gap-10'
+      >
+        <Image
           key={i}
-          src={LogosData[i]?.image_url}
-          alt={LogosData[i]?.title + ' education'}
-          className='max-w-[12rem] max-h-[5rem] my-2'
+          loading='lazy'
+          src={logos[i]?.image_url}
+          alt={logos[i]?.name + ' education'}
+          className='w-[7rem] md:w-[12rem]  aspect-[2] object-contain my-2'
         />
 
-        {i + 1 <= LogosData?.length - 1 && (
-          <img
+        {i + 1 <= logos?.length - 1 && (
+          <Image
             key={i + 1}
-            src={LogosData[i + 1]?.image_url}
-            alt={LogosData[i]?.title + ' education'}
-            className='max-w-[12rem] max-h-[5rem]'
+            loading='lazy'
+            src={logos[i + 1]?.image_url}
+            alt={logos[i]?.name + ' education'}
+            className='w-[7rem] md:w-[12rem] aspect-[2] object-contain'
           />
         )}
       </SwiperSlide>
@@ -54,8 +55,8 @@ const renderSlides = () => {
   return groupedItems;
 };
 
-const Education = () => {
-  const [isImageViewer, setIsImageViewer] = useState(false);
+const Education = ({ data }: { data: Achievement[] }) => {
+  // const [isImageViewer, setIsImageViewer] = useState(false);
 
   return (
     <div className='pt-10 md:pt-16 relative w-full text-white'>
@@ -72,11 +73,11 @@ const Education = () => {
             </p>
             <div className='text-white'>
               <AutoSwiper breakpoints={breakpoints}>
-                {renderSlides()}
+                {renderSlides(data)}
               </AutoSwiper>
             </div>
 
-            <p className='text-center text-[1.05rem]'>
+            {/* <p className='text-center text-[1.05rem]'>
               Click{' '}
               <span
                 className='cursor-pointer text-primary-color'
@@ -85,11 +86,11 @@ const Education = () => {
                 here{' '}
               </span>{' '}
               to check my certificates
-            </p>
+            </p> */}
           </div>
         </FadeIn>
       </Container>
-
+      {/* 
       {
         <Modal isOpen={isImageViewer}>
           <Suspense fallback={null}>
@@ -99,7 +100,7 @@ const Education = () => {
             />
           </Suspense>
         </Modal>
-      }
+      } */}
     </div>
   );
 };
