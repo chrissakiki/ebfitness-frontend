@@ -1,4 +1,4 @@
-name: ebfitness-web
+name: ebfitness-frontend
 
 services:
   web:
