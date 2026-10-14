@@ -111,7 +111,7 @@ const Footer = () => {
                 </span>
               </div>
               <div className='text-[1.1rem] font-medium'>
-                @2024 EB Fitness Team | All Rights Reserved
+                @{new Date().getFullYear()} EB Fitness Team | All Rights Reserved
               </div>
             </div>
           </div>
